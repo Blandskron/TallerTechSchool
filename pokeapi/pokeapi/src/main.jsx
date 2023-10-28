@@ -2,17 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./routes/root.jsx";
-import PokemonDetail from "./routes/PokemonDetail";
+import Root from "./routes/Root";
+import PokemonDetail, {
+  loader as pokemonDetailLoader,
+} from "./routes/PokemonDetail";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,	
+    element: <Root />,
   },
   {
     path: "pokemon/:pokemonId",
     element: <PokemonDetail />,
+    loader: pokemonDetailLoader,
   },
 ]);
 

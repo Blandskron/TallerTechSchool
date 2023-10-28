@@ -1,11 +1,16 @@
-function PokemonDetail() {
+import { useLoaderData } from "react-router-dom";
+import { getPokemon } from "../services/getPokemon";
 
-
-  return (
-    <>
-      <h1>PokeDex</h1>
-    </>
-  );
+export async function loader({ params }) {
+  const pokemon = await getPokemon(params.pokemonId);
+  console.log(params.pokemonId)
+  return { pokemon };
 }
+
+const PokemonDetail = () => {
+  const { pokemon } = useLoaderData();
+
+  return <div>{pokemon.name}</div>;
+};
 
 export default PokemonDetail;
