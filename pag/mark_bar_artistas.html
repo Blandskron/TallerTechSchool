@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSchool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">Talle TECHSCHOOL</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Analisis de Datos con Python</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./bubble_chart.html">Bubble Chart</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./mark_bar.html">Mark Bar</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Otros Graficos
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="./mark_bar_artistas.html">Mark Bar Artistas</a></li>
+                    <li><a class="dropdown-item" href="./mark_bar_key_mode.html">Mark Bar Key Mode</a></li>
+                    <li><a class="dropdown-item" href="./mark_circle.html">Mark Circle</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+</header>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-2ddd8c0249645516b12482875a19e344"}, "mark": "bar", "encoding": {"tooltip": [{"field": "artist(s)_name", "type": "nominal"}, {"field": "streams", "type": "quantitative"}], "x": {"field": "streams", "type": "quantitative"}, "y": {"field": "artist(s)_name", "sort": "y", "type": "nominal"}}, "title": "Streams by Artist", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-2ddd8c0249645516b12482875a19e344": [{"artist(s)_name": "(G)I-DLE", "streams": 96273746}, {"artist(s)_name": "A Boogie Wit da Hoodie", "streams": 109276132}, {"artist(s)_name": "A$AP Rocky", "streams": 94186466}, {"artist(s)_name": "ARIZONATEARS", "streams": 207033255}, {"artist(s)_name": "AgroPlay", "streams": 233801632}, {"artist(s)_name": "Agust D", "streams": 214626277}, {"artist(s)_name": "Altamash Faridi", "streams": 54225632}, {"artist(s)_name": "Amitabh Bhattacharya", "streams": 54225632}, {"artist(s)_name": "Amitabha Bhattacharya", "streams": 64533040}, {"artist(s)_name": "Ana Castela", "streams": 233801632}, {"artist(s)_name": "Anne-Marie", "streams": 177740666}, {"artist(s)_name": "Anuel Aa", "streams": 197257295}, {"artist(s)_name": "Aqua", "streams": 65156199}, {"artist(s)_name": "Arcangel", "streams": 100409613}, {"artist(s)_name": "Ariana Grande", "streams": 518745108}, {"artist(s)_name": "Arijit Singh", "streams": 64533040}, {"artist(s)_name": "BLESSD", "streams": 127026613}, {"artist(s)_name": "BTS", "streams": 118482347}, {"artist(s)_name": "Bad Bunny", "streams": 1270236539}, {"artist(s)_name": "Beam", "streams": 32761689}, {"artist(s)_name": "Becky G", "streams": 161460990}, {"artist(s)_name": "Beyonc\ufffd", "streams": 57089066}, {"artist(s)_name": "Be\ufffd\ufffd", "streams": 90839753}, {"artist(s)_name": "Big One", "streams": 265217688}, {"artist(s)_name": "Billie Eilish", "streams": 30546883}, {"artist(s)_name": "Bizarrap", "streams": 1144201037}, {"artist(s)_name": "Bvga Beatz", "streams": 81102253}, {"artist(s)_name": "Calvin Harris", "streams": 314838448}, {"artist(s)_name": "Cartel De Santa", "streams": 162887075}, {"artist(s)_name": "Central Cee", "streams": 183706234}, {"artist(s)_name": "Chino Pacas", "streams": 372266996}, {"artist(s)_name": "Coi Leray", "streams": 247847641}, {"artist(s)_name": "Colde", "streams": 34502215}, {"artist(s)_name": "DJ 900", "streams": 11956641}, {"artist(s)_name": "DJ Luian", "streams": 197257295}, {"artist(s)_name": "DJ Matt D", "streams": 39709092}, {"artist(s)_name": "Dave", "streams": 183706234}, {"artist(s)_name": "David Guetta", "streams": 177740666}, {"artist(s)_name": "David Kushner", "streams": 387570742}, {"artist(s)_name": "Doechii", "streams": 95131998}, {"artist(s)_name": "Don Toliver", "streams": 137823943}, {"artist(s)_name": "Do\ufffd\ufffdu ", "streams": 43522589}, {"artist(s)_name": "Drake", "streams": 175097833}, {"artist(s)_name": "Dua Lipa", "streams": 127408954}, {"artist(s)_name": "Duki", "streams": 123122413}, {"artist(s)_name": "ENHYPEN", "streams": 76767396}, {"artist(s)_name": "Ed Sheeran", "streams": 235470112}, {"artist(s)_name": "Eden Mu\ufffd\ufffd", "streams": 89933133}, {"artist(s)_name": "Eladio Carrion", "streams": 250305248}, {"artist(s)_name": "Ellie Goulding", "streams": 211050784}, {"artist(s)_name": "Emilia", "streams": 123122413}, {"artist(s)_name": "Eric Church", "streams": 58890931}, {"artist(s)_name": "Eslabon Armado", "streams": 725980112}, {"artist(s)_name": "FMK", "streams": 265217688}, {"artist(s)_name": "Feid", "streams": 790451841}, {"artist(s)_name": "Fifty Fifty", "streams": 636477650}, {"artist(s)_name": "Fuerza Regida", "streams": 371188731}, {"artist(s)_name": "Future", "streams": 238369216}, {"artist(s)_name": "Gabito Ballesteros", "streams": 86444842}, {"artist(s)_name": "Gorillaz", "streams": 149778242}, {"artist(s)_name": "Grupo Frontera", "streams": 894189544}, {"artist(s)_name": "Grupo Marca Registrada", "streams": 147290338}, {"artist(s)_name": "Gunna", "streams": 95217315}, {"artist(s)_name": "Halsey", "streams": 51985779}, {"artist(s)_name": "IU", "streams": 95816024}, {"artist(s)_name": "IVE", "streams": 123132751}, {"artist(s)_name": "Ice Spice", "streams": 372630541}, {"artist(s)_name": "Israel & Rodolffo", "streams": 138517666}, {"artist(s)_name": "J. Cole", "streams": 261164940}, {"artist(s)_name": "JID", "streams": 24975653}, {"artist(s)_name": "JISOO", "streams": 232896922}, {"artist(s)_name": "JVKE", "streams": 133753727}, {"artist(s)_name": "Jack Black", "streams": 68216992}, {"artist(s)_name": "James Blake", "streams": 39666245}, {"artist(s)_name": "Jasiel Nu\ufffd\ufffdez", "streams": 129083819}, {"artist(s)_name": "Jessie Reyez", "streams": 103787664}, {"artist(s)_name": "Jhayco", "streams": 61105704}, {"artist(s)_name": "Jimin", "streams": 992049717}, {"artist(s)_name": "Jung Kook", "streams": 141381703}, {"artist(s)_name": "Junior H", "streams": 894085872}, {"artist(s)_name": "Justin Bieber", "streams": 105062254}, {"artist(s)_name": "Kali Uchis", "streams": 256483385}, {"artist(s)_name": "Kaliii", "streams": 227018992}, {"artist(s)_name": "Kanii", "streams": 77377503}, {"artist(s)_name": "Karol G", "streams": 1354836810}, {"artist(s)_name": "KayBlack", "streams": 71573339}, {"artist(s)_name": "Ke personajes", "streams": 142095275}, {"artist(s)_name": "Kendrick Lamar", "streams": 57089066}, {"artist(s)_name": "Kodak Black", "streams": 133753727}, {"artist(s)_name": "LE SSERAFIM", "streams": 92035115}, {"artist(s)_name": "La Joaqui", "streams": 120972253}, {"artist(s)_name": "La Kelly", "streams": 162887075}, {"artist(s)_name": "Labrinth", "streams": 117747907}, {"artist(s)_name": "Lana Del Rey", "streams": 187918078}, {"artist(s)_name": "Latto", "streams": 141381703}, {"artist(s)_name": "Lil Durk", "streams": 190630817}, {"artist(s)_name": "Lil Uzi Vert", "streams": 244159940}, {"artist(s)_name": "Lil Wayne", "streams": 86773632}, {"artist(s)_name": "Lisa", "streams": 76910644}, {"artist(s)_name": "Lit Killah", "streams": 123122413}, {"artist(s)_name": "Loreen", "streams": 201660859}, {"artist(s)_name": "Luke Combs", "streams": 157058870}, {"artist(s)_name": "MC Caverinha", "streams": 71573339}, {"artist(s)_name": "MC Kevin o Chris", "streams": 111947664}, {"artist(s)_name": "Madonna", "streams": 115364561}, {"artist(s)_name": "Mae Stephens", "streams": 165584767}, {"artist(s)_name": "Mahalini", "streams": 166570053}, {"artist(s)_name": "Mambo Kingz", "streams": 197257295}, {"artist(s)_name": "Manuel Turizo", "streams": 314472991}, {"artist(s)_name": "Mari Fernandez", "streams": 138517666}, {"artist(s)_name": "Maria Becerra", "streams": 166980040}, {"artist(s)_name": "Marshmello", "streams": 223633238}, {"artist(s)_name": "Matu\ufffd", "streams": 77233241}, {"artist(s)_name": "Mc Livinho", "streams": 39709092}, {"artist(s)_name": "Mc Pedrinho", "streams": 11956641}, {"artist(s)_name": "Melanie Martinez", "streams": 67070410}, {"artist(s)_name": "Metro Boomin", "streams": 469897824}, {"artist(s)_name": "Miley Cyrus", "streams": 1316855716}, {"artist(s)_name": "Milo j", "streams": 248088961}, {"artist(s)_name": "Mora", "streams": 57312735}, {"artist(s)_name": "Morgan Wallen", "streams": 1051650608}, {"artist(s)_name": "Muni Long", "streams": 133753727}, {"artist(s)_name": "Myke Towers", "streams": 241470136}, {"artist(s)_name": "NAV", "streams": 109276132}, {"artist(s)_name": "NF", "streams": 52722996}, {"artist(s)_name": "NLE Choppa", "streams": 133753727}, {"artist(s)_name": "Natanael Cano", "streams": 467901429}, {"artist(s)_name": "NewJeans", "streams": 518794821}, {"artist(s)_name": "Niall Horan", "streams": 144584800}, {"artist(s)_name": "Nicki Minaj", "streams": 251568534}, {"artist(s)_name": "Nicky Jam", "streams": 57945987}, {"artist(s)_name": "Nile Rodgers", "streams": 92035115}, {"artist(s)_name": "Offset", "streams": 111749285}, {"artist(s)_name": "Olivia Rodrigo", "streams": 140003974}, {"artist(s)_name": "Oscar Maydon", "streams": 307370144}, {"artist(s)_name": "P!nk", "streams": 134255790}, {"artist(s)_name": "PR1ISVX", "streams": 77377503}, {"artist(s)_name": "Peggy Gou", "streams": 57876440}, {"artist(s)_name": "Peso P", "streams": 129083819}, {"artist(s)_name": "Peso Pluma", "streams": 2860506771}, {"artist(s)_name": "PinkPantheress", "streams": 156338624}, {"artist(s)_name": "Playboi Carti", "streams": 115364561}, {"artist(s)_name": "Post Malone", "streams": 187606331}, {"artist(s)_name": "Prod Malax", "streams": 81102253}, {"artist(s)_name": "Quevedo", "streams": 445406072}, {"artist(s)_name": "RM", "streams": 34502215}, {"artist(s)_name": "ROSAL\ufffd", "streams": 482914415}, {"artist(s)_name": "Rauw Alejandro", "streams": 479094333}, {"artist(s)_name": "Rich The Kid", "streams": 77233241}, {"artist(s)_name": "Roisee", "streams": 94186466}, {"artist(s)_name": "Romeo Santos", "streams": 266624541}, {"artist(s)_name": "Rusherking", "streams": 123122413}, {"artist(s)_name": "Ryan Castro", "streams": 11599388}, {"artist(s)_name": "SEVENTEEN", "streams": 91221625}, {"artist(s)_name": "Sachin-Jigar", "streams": 118758672}, {"artist(s)_name": "Saiko", "streams": 57312735}, {"artist(s)_name": "Sam Smith", "streams": 103787664}, {"artist(s)_name": "Sean Paul", "streams": 115010040}, {"artist(s)_name": "Sebastian Yatra", "streams": 90839753}, {"artist(s)_name": "Semicenk", "streams": 43522589}, {"artist(s)_name": "Shadab Faridi", "streams": 54225632}, {"artist(s)_name": "Shakira", "streams": 1464090067}, {"artist(s)_name": "Shubh", "streams": 47956378}, {"artist(s)_name": "Simone Mendes", "streams": 153454328}, {"artist(s)_name": "Sky Rompiendo", "streams": 107753850}, {"artist(s)_name": "Sog", "streams": 11599388}, {"artist(s)_name": "Steve Aoki", "streams": 120972253}, {"artist(s)_name": "Stray Kids", "streams": 65496046}, {"artist(s)_name": "Suga", "streams": 51985779}, {"artist(s)_name": "Supernova Ent", "streams": 81102253}, {"artist(s)_name": "Swae Lee", "streams": 196049764}, {"artist(s)_name": "TAEYANG", "streams": 229760939}, {"artist(s)_name": "TOMORROW X TOGETHER", "streams": 107642809}, {"artist(s)_name": "Tainy", "streams": 61245289}, {"artist(s)_name": "Taiu", "streams": 248088961}, {"artist(s)_name": "Taylor Swift", "streams": 373307957}, {"artist(s)_name": "The Creator", "streams": 139231626}, {"artist(s)_name": "The Kid Laroi", "streams": 147538971}, {"artist(s)_name": "The Weeknd", "streams": 730289946}, {"artist(s)_name": "Tiago pzk", "streams": 123122413}, {"artist(s)_name": "Tini", "streams": 338645196}, {"artist(s)_name": "Toian", "streams": 32761689}, {"artist(s)_name": "Troye Sivan", "streams": 22581161}, {"artist(s)_name": "Tyler", "streams": 139231626}, {"artist(s)_name": "Varun Jain", "streams": 54225632}, {"artist(s)_name": "Veigh", "streams": 81102253}, {"artist(s)_name": "WizKid", "streams": 32761689}, {"artist(s)_name": "YOASOBI", "streams": 143573775}, {"artist(s)_name": "Yahritza Y Su Esencia", "streams": 188933502}, {"artist(s)_name": "Yng Lvcas", "streams": 553634067}, {"artist(s)_name": "Young Miko", "streams": 335222234}, {"artist(s)_name": "Z\ufffd\ufffd Neto & Crist", "streams": 145458418}, {"artist(s)_name": "dennis", "streams": 111947664}, {"artist(s)_name": "j-hope", "streams": 116599790}, {"artist(s)_name": "sped up nightcore", "streams": 207033255}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
